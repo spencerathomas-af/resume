@@ -248,9 +248,13 @@
     .timeline-item {
       padding: 0 0 60px 48px;
       position: relative;
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s;
+    }
+    .timeline-item.animate-in {
       opacity: 0;
       transform: translateY(20px);
-      transition: all 0.6s;
     }
     .timeline-item.visible { opacity: 1; transform: translateY(0); }
     .timeline-dot {
@@ -661,7 +665,7 @@
     </div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-num">5<span style="font-size:1.5rem; color: var(--sky)">+</span></div>
+        <div class="stat-num">6<span style="font-size:1.5rem; color: var(--sky)">+</span></div>
         <div class="stat-label">Years at Medallia</div>
       </div>
       <div class="stat">
@@ -721,11 +725,11 @@
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-period">2024 – Present</div>
-        <div class="timeline-role">Senior Manager, Solutions Engineering & Experience Advisory</div>
+        <div class="timeline-period">2025 – Present</div>
+        <div class="timeline-role">Senior Solutions Engineering</div>
         <div class="timeline-company">Medallia · Denver, CO</div>
         <div class="timeline-body">
-          Founded and scaled the Digital Center of Excellence. Led renewals and expansion plays for CIBC, Vanguard, Cox Communications, Albertsons, and AT&T. Developed a value-driven DXA methodology now used across accounts. Primary voice on Medallia's digital and omnichannel go-to-market strategy, influencing 2026 product roadmap.
+          Scaled the Digital Center of Excellence into Solutions Engineering organizatioan. Led renewals and expansion plays for CIBC, Vanguard, Cox Communications, Albertsons, and AT&T. Developed a value-driven DXA methodology now used across accounts. Primary voice on Medallia's digital and omnichannel go-to-market strategy, influencing 2026 product roadmap.
         </div>
         <div class="timeline-tags">
           <span class="tag">Go-to-Market</span>
@@ -737,7 +741,7 @@
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-period">2023 – 2024</div>
+        <div class="timeline-period">2023 – 2025</div>
         <div class="timeline-role">Experience Advisor — Digital Practice</div>
         <div class="timeline-company">Medallia · Denver, CO</div>
         <div class="timeline-body">
@@ -750,33 +754,19 @@
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">2022 – 2023</div>
-        <div class="timeline-role">Manager, Digital Implementations</div>
-        <div class="timeline-company">Medallia · Denver, CO</div>
-        <div class="timeline-body">
-          People manager for high-performing implementation team. Team achieved zero deployment escalations, record Q4 billability, and highest engagement eNPS in NORAM. Launched 45+ programs, including Pfizer, Meta, PG&E, Ford Pro, and Nordstrom. Co-founded and piloted Integrated Solutions practice from scratch.
-        </div>
-        <div class="timeline-tags">
-          <span class="tag">People Management</span>
-          <span class="tag">Team Building</span>
-          <span class="tag">Implementation</span>
-        </div>
-      </div>
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-period">2019 – 2022</div>
-        <div class="timeline-role">Senior Analyst → Solutions Engineer</div>
+        <div class="timeline-role">Senior Analyst → Implementations Manager</div>
         <div class="timeline-company">Medallia · Denver, CO</div>
         <div class="timeline-body">
           Built and scaled the enterprise digital implementation discipline. Most billable hours on Digital Suite team. Self-handled VP and CTO-level product escalations. Created the onboarding package now standard across BPP installs. Became the go-to expert in Digital, DXA, and emerging product integrations.
         </div>
         <div class="timeline-tags">
           <span class="tag">Enterprise Accounts</span>
-          <span class="tag">Digital Feedback</span>
-          <span class="tag">DXA</span>
+         <span class="tag">People Management</span>
+          <span class="tag">Team Building</span>
           <span class="tag">Escalation Handling</span>
         </div>
       </div>
@@ -996,8 +986,8 @@
     <h2 class="section-title">Let's Connect</h2>
     <p>Open to new opportunities in solutions engineering, advisory, and enterprise go-to-market leadership.</p>
     <div class="contact-links">
-      <a href="https://www.linkedin.com/in/spencerthomas" class="contact-link primary" target="_blank">LinkedIn Profile</a>
-      <a href="mailto:spencer@example.com" class="contact-link outline">Send Email</a>
+      <a href="https://www.linkedin.com/in/spencerathomas" class="contact-link primary" target="_blank">LinkedIn Profile</a>
+      <a href="mailto:spencerathomas@gmail.com" class="contact-link outline">Send Email</a>
     </div>
   </section>
 
@@ -1005,7 +995,7 @@
     <p>© 2025 Spencer Thomas · Built to showcase career, leadership, and impact</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll reveal for timeline items
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -1013,7 +1003,10 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.timeline-item').forEach(el => observer.observe(el));
+    document.querySelectorAll('.timeline-item').forEach(el => {
+      el.classList.add('animate-in');
+      observer.observe(el);
+    });
 
     // Smooth nav highlighting
     const sections = document.querySelectorAll('section[id]');
@@ -1176,8 +1169,4 @@ Career aspiration: Leadership role within the go-to-market org, involved in more
       conv.scrollTop = conv.scrollHeight;
     }
 
-    function escapeHtml(str) {
-      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-    }
-</body>
-</html>
+    func
