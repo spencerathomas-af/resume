@@ -20,14 +20,8 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--sand);
-      color: var(--text);
-      line-height: 1.6;
-    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--sand); color: var(--text); line-height: 1.6; }
 
-    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
@@ -36,593 +30,136 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(201, 168, 76, 0.2);
     }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold);
-      font-size: 1.2rem;
-      letter-spacing: 0.05em;
-    }
+    .nav-logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.2rem; letter-spacing: 0.05em; }
     .nav-links { display: flex; gap: 36px; }
-    .nav-links a {
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
+    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
     .nav-links a:hover { color: var(--gold); }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      padding: 120px 60px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(74,122,155,0.15) 0%, transparent 70%),
-                  radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 60%);
-    }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
+    .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; padding: 120px 60px 80px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(74,122,155,0.15) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 60%); }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px; }
     .hero-content { position: relative; z-index: 2; max-width: 900px; }
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-      font-weight: 500;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.2s forwards;
-    }
-    .hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3.5rem, 7vw, 6.5rem);
-      font-weight: 900;
-      color: var(--white);
-      line-height: 0.95;
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.4s forwards;
-    }
+    .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 500; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
+    .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 7vw, 6.5rem); font-weight: 900; color: var(--white); line-height: 0.95; margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s 0.4s forwards; }
     .hero-name span { color: var(--gold); }
-    .hero-title {
-      font-size: 1.25rem;
-      color: var(--sky);
-      font-weight: 300;
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.6s forwards;
-    }
-    .hero-summary {
-      max-width: 680px;
-      color: rgba(255,255,255,0.65);
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin-bottom: 48px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.8s forwards;
-    }
-    .hero-ctas {
-      display: flex; gap: 16px; flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.8s 1s forwards;
-    }
-    .btn-primary {
-      padding: 14px 32px;
-      background: var(--gold);
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      transition: all 0.3s;
-      border: 2px solid var(--gold);
-    }
+    .hero-title { font-size: 1.25rem; color: var(--sky); font-weight: 300; margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s 0.6s forwards; }
+    .hero-summary { max-width: 680px; color: rgba(255,255,255,0.65); font-size: 1.05rem; line-height: 1.75; margin-bottom: 48px; opacity: 0; animation: fadeUp 0.8s 0.8s forwards; }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s 1s forwards; }
+    .btn-primary { padding: 14px 32px; background: var(--gold); color: var(--navy); text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em; transition: all 0.3s; border: 2px solid var(--gold); }
     .btn-primary:hover { background: transparent; color: var(--gold); }
-    .btn-secondary {
-      padding: 14px 32px;
-      background: transparent;
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      border: 2px solid rgba(255,255,255,0.25);
-      transition: all 0.3s;
-    }
+    .btn-secondary { padding: 14px 32px; background: transparent; color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.05em; border: 2px solid rgba(255,255,255,0.25); transition: all 0.3s; }
     .btn-secondary:hover { border-color: var(--sky); color: var(--sky); }
-
-    .hero-stats {
-      position: absolute; right: 60px; bottom: 80px;
-      display: flex; gap: 48px;
-      opacity: 0;
-      animation: fadeUp 0.8s 1.2s forwards;
-    }
+    .hero-stats { position: absolute; right: 60px; bottom: 80px; display: flex; gap: 48px; opacity: 0; animation: fadeUp 0.8s 1.2s forwards; }
     .stat { text-align: center; }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-      margin-top: 6px;
-    }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 6px; }
 
-    /* SECTIONS */
     section { padding: 100px 60px; }
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      color: var(--navy);
-      line-height: 1.1;
-      margin-bottom: 60px;
-    }
+    .section-label { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 12px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--navy); line-height: 1.1; margin-bottom: 60px; }
     .section-title span { color: var(--steel); }
 
-    /* STRENGTHS */
     .strengths { background: var(--white); }
-    .strengths-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2px;
-    }
-    .strength-card {
-      background: var(--sand);
-      padding: 40px 36px;
-      transition: all 0.4s;
-      border-left: 3px solid transparent;
-      position: relative;
-      overflow: hidden;
-    }
-    .strength-card::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(201,168,76,0.05), transparent);
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
-    .strength-card:hover {
-      border-left-color: var(--gold);
-      transform: translateX(6px);
-    }
+    .strengths-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2px; }
+    .strength-card { background: var(--sand); padding: 40px 36px; transition: all 0.4s; border-left: 3px solid transparent; position: relative; overflow: hidden; }
+    .strength-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.05), transparent); opacity: 0; transition: opacity 0.4s; }
+    .strength-card:hover { border-left-color: var(--gold); transform: translateX(6px); }
     .strength-card:hover::before { opacity: 1; }
-    .strength-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: rgba(74,122,155,0.15);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-    .strength-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 12px;
-      letter-spacing: 0.02em;
-    }
-    .strength-text {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
+    .strength-num { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; color: rgba(74,122,155,0.15); line-height: 1; margin-bottom: 16px; }
+    .strength-title { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 12px; letter-spacing: 0.02em; }
+    .strength-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
 
-    /* EXPERIENCE TIMELINE */
     .experience { background: var(--navy); color: var(--white); }
     .experience .section-title { color: var(--white); }
     .experience .section-title span { color: var(--gold); }
     .timeline { position: relative; }
-    .timeline::before {
-      content: '';
-      position: absolute; left: 0; top: 0; bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-    }
-    .timeline-item {
-      padding: 0 0 60px 48px;
-      position: relative;
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.6s;
-    }
-    .timeline-item.animate-in {
-      opacity: 0;
-      transform: translateY(20px);
-    }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--gold), transparent); }
+    .timeline-item { padding: 0 0 60px 48px; position: relative; opacity: 1; transform: translateY(0); transition: opacity 0.6s, transform 0.6s; }
+    .timeline-item.animate-in { opacity: 0; transform: translateY(20px); }
     .timeline-item.visible { opacity: 1; transform: translateY(0); }
-    .timeline-dot {
-      position: absolute; left: -5px; top: 6px;
-      width: 11px; height: 11px;
-      border-radius: 50%;
-      background: var(--gold);
-      border: 2px solid var(--navy);
-    }
-    .timeline-period {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--steel);
-      margin-bottom: 8px;
-      font-weight: 500;
-    }
-    .timeline-role {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-    .timeline-company {
-      font-size: 0.9rem;
-      color: var(--gold);
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
-    .timeline-body {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.75;
-      max-width: 680px;
-    }
-    .timeline-tags {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin-top: 16px;
-    }
-    .tag {
-      padding: 4px 12px;
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 500;
-      border: 1px solid rgba(201,168,76,0.3);
-      color: rgba(201,168,76,0.8);
-    }
+    .timeline-dot { position: absolute; left: -5px; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--gold); border: 2px solid var(--navy); }
+    .timeline-period { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--steel); margin-bottom: 8px; font-weight: 500; }
+    .timeline-role { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 4px; }
+    .timeline-company { font-size: 0.9rem; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
+    .timeline-body { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.75; max-width: 680px; }
+    .timeline-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag { padding: 4px 12px; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; border: 1px solid rgba(201,168,76,0.3); color: rgba(201,168,76,0.8); }
 
-    /* MANAGER REVIEWS */
     .reviews { background: var(--slate); color: var(--white); overflow: hidden; }
     .reviews .section-title { color: var(--white); }
     .reviews .section-title span { color: var(--sky); }
-    .quotes-track {
-      display: flex;
-      gap: 32px;
-      overflow-x: auto;
-      padding-bottom: 20px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
+    .quotes-track { display: flex; gap: 32px; overflow-x: auto; padding-bottom: 20px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     .quotes-track::-webkit-scrollbar { display: none; }
-    .quote-card {
-      flex: 0 0 420px;
-      scroll-snap-align: start;
-      background: rgba(255,255,255,0.06);
-      padding: 40px;
-      border: 1px solid rgba(255,255,255,0.1);
-      position: relative;
-      transition: all 0.3s;
-    }
+    .quote-card { flex: 0 0 420px; scroll-snap-align: start; background: rgba(255,255,255,0.06); padding: 40px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s; }
     .quote-card:hover { background: rgba(255,255,255,0.1); }
-    .quote-mark {
-      font-family: 'Playfair Display', serif;
-      font-size: 5rem;
-      color: var(--sky);
-      opacity: 0.3;
-      line-height: 0.5;
-      margin-bottom: 20px;
-      display: block;
-    }
-    .quote-text {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.8);
-      font-style: italic;
-      margin-bottom: 24px;
-    }
-    .quote-source {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--sky);
-      font-weight: 500;
-      font-style: normal;
-    }
-    .scroll-hint {
-      text-align: center;
-      margin-top: 32px;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-    }
+    .quote-mark { font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--sky); opacity: 0.3; line-height: 0.5; margin-bottom: 20px; display: block; }
+    .quote-text { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.8); font-style: italic; margin-bottom: 24px; }
+    .quote-source { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); font-weight: 500; }
+    .scroll-hint { text-align: center; margin-top: 32px; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
 
-    /* IMPACT METRICS */
     .impact { background: var(--sand); }
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 2px;
-      margin-bottom: 60px;
-    }
-    .metric {
-      background: var(--white);
-      padding: 40px 30px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px; margin-bottom: 60px; }
+    .metric { background: var(--white); padding: 40px 30px; text-align: center; transition: transform 0.3s; }
     .metric:hover { transform: translateY(-4px); }
-    .metric-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--navy);
-      line-height: 1;
-    }
+    .metric-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--navy); line-height: 1; }
     .metric-unit { font-size: 1.5rem; color: var(--gold); }
-    .metric-label {
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 10px;
-      font-weight: 500;
-    }
-
-    /* NOTABLE ACCOUNTS */
-    .accounts-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 12px;
-    }
-    .account-chip {
-      background: var(--navy);
-      color: rgba(255,255,255,0.8);
-      padding: 12px 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      text-align: center;
-      transition: background 0.3s;
-    }
+    .metric-label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 10px; font-weight: 500; }
+    .accounts-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .account-chip { background: var(--navy); color: rgba(255,255,255,0.8); padding: 12px 20px; font-size: 0.85rem; font-weight: 500; text-align: center; transition: background 0.3s; }
     .account-chip:hover { background: var(--steel); }
 
-    /* CAREER TRAJECTORY */
     .trajectory { background: var(--white); }
     .trajectory-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
-    .traj-item {
-      padding: 28px;
-      border: 1px solid rgba(13,27,42,0.1);
-      transition: all 0.3s;
-    }
+    .traj-item { padding: 28px; border: 1px solid rgba(13,27,42,0.1); transition: all 0.3s; }
     .traj-item:hover { border-color: var(--gold); }
-    .traj-year {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .traj-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
+    .traj-year { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold); font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+    .traj-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 8px; }
     .traj-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
 
-    /* CONTACT */
-    .contact {
-      background: var(--navy);
-      color: var(--white);
-      text-align: center;
-      padding: 100px 60px;
-    }
+    .ask { background: var(--navy); color: var(--white); }
+    .ask .section-title { color: var(--white); }
+    .ask .section-title span { color: var(--gold); }
+    .ask-intro { color: rgba(255,255,255,0.5); font-size: 1rem; max-width: 600px; margin-bottom: 40px; line-height: 1.7; }
+    .ask-api-note { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25); padding: 10px 18px; margin-bottom: 40px; font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(201,168,76,0.8); }
+    .ask-api-note input { background: transparent; border: none; outline: none; color: var(--gold); font-family: 'DM Sans', sans-serif; font-size: 0.78rem; width: 320px; }
+    .ask-api-note input::placeholder { color: rgba(201,168,76,0.4); }
+    .ask-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+    .ask-chip { padding: 8px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.65); font-size: 0.82rem; cursor: pointer; transition: all 0.25s; font-family: 'DM Sans', sans-serif; }
+    .ask-chip:hover { background: rgba(201,168,76,0.12); border-color: rgba(201,168,76,0.4); color: var(--gold); }
+    .ask-input-row { display: flex; max-width: 780px; margin-bottom: 32px; }
+    .ask-input { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-right: none; padding: 16px 20px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--white); outline: none; transition: border-color 0.3s; }
+    .ask-input:focus { border-color: rgba(201,168,76,0.5); }
+    .ask-input::placeholder { color: rgba(255,255,255,0.25); }
+    .ask-btn { padding: 16px 32px; background: var(--gold); color: var(--navy); border: none; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; letter-spacing: 0.05em; transition: all 0.3s; white-space: nowrap; }
+    .ask-btn:hover { background: var(--sky); }
+    .ask-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .ask-conversation { max-width: 780px; display: flex; flex-direction: column; gap: 20px; }
+    .ask-bubble { padding: 20px 24px; font-size: 0.93rem; line-height: 1.75; animation: fadeUp 0.4s forwards; }
+    .ask-bubble.user { background: rgba(255,255,255,0.05); border-left: 3px solid var(--sky); color: rgba(255,255,255,0.75); align-self: flex-end; max-width: 85%; }
+    .ask-bubble.assistant { background: rgba(201,168,76,0.07); border-left: 3px solid var(--gold); color: rgba(255,255,255,0.85); }
+    .ask-bubble-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; opacity: 0.5; }
+    .ask-bubble.user .ask-bubble-label { color: var(--sky); }
+    .ask-bubble.assistant .ask-bubble-label { color: var(--gold); }
+    .ask-typing { display: flex; align-items: center; gap: 6px; padding: 16px 24px; background: rgba(201,168,76,0.07); border-left: 3px solid var(--gold); max-width: 120px; }
+    .ask-typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: 0.4; animation: blink 1.2s infinite; }
+    .ask-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .ask-typing span:nth-child(3) { animation-delay: 0.4s; }
+    .ask-error { color: #e07070; font-size: 0.85rem; padding: 12px 16px; background: rgba(224,112,112,0.1); border-left: 3px solid #e07070; max-width: 780px; }
+
+    .contact { background: var(--navy); color: var(--white); text-align: center; padding: 100px 60px; }
     .contact .section-title { color: var(--white); margin-bottom: 20px; }
     .contact p { color: rgba(255,255,255,0.5); margin-bottom: 48px; font-size: 1.05rem; }
-    .contact-links {
-      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
-    }
-    .contact-link {
-      padding: 14px 36px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      transition: all 0.3s;
-    }
+    .contact-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .contact-link { padding: 14px 36px; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em; transition: all 0.3s; }
     .contact-link.primary { background: var(--gold); color: var(--navy); }
     .contact-link.primary:hover { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
     .contact-link.outline { border: 2px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.7); }
     .contact-link.outline:hover { border-color: var(--sky); color: var(--sky); }
 
-    /* FOOTER */
-    footer {
-      background: #070f18;
-      color: rgba(255,255,255,0.25);
-      text-align: center;
-      padding: 24px 60px;
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-    }
+    footer { background: #070f18; color: rgba(255,255,255,0.25); text-align: center; padding: 24px 60px; font-size: 0.8rem; letter-spacing: 0.05em; }
 
-    /* ASK SPENCER AI */
-    .ask { background: var(--navy); color: var(--white); }
-    .ask .section-title { color: var(--white); }
-    .ask .section-title span { color: var(--gold); }
-    .ask-intro {
-      color: rgba(255,255,255,0.5);
-      font-size: 1rem;
-      max-width: 600px;
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-    .ask-api-note {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(201,168,76,0.1);
-      border: 1px solid rgba(201,168,76,0.25);
-      padding: 10px 18px;
-      margin-bottom: 40px;
-      font-size: 0.78rem;
-      letter-spacing: 0.05em;
-      color: rgba(201,168,76,0.8);
-    }
-    .ask-api-note input {
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--gold);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.78rem;
-      width: 320px;
-      letter-spacing: 0.03em;
-    }
-    .ask-api-note input::placeholder { color: rgba(201,168,76,0.4); }
-    .ask-chips {
-      display: flex; flex-wrap: wrap; gap: 10px;
-      margin-bottom: 32px;
-    }
-    .ask-chip {
-      padding: 8px 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.65);
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: all 0.25s;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .ask-chip:hover {
-      background: rgba(201,168,76,0.12);
-      border-color: rgba(201,168,76,0.4);
-      color: var(--gold);
-    }
-    .ask-input-row {
-      display: flex; gap: 0;
-      max-width: 780px;
-      margin-bottom: 32px;
-    }
-    .ask-input {
-      flex: 1;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-right: none;
-      padding: 16px 20px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      color: var(--white);
-      outline: none;
-      transition: border-color 0.3s;
-    }
-    .ask-input:focus { border-color: rgba(201,168,76,0.5); }
-    .ask-input::placeholder { color: rgba(255,255,255,0.25); }
-    .ask-btn {
-      padding: 16px 32px;
-      background: var(--gold);
-      color: var(--navy);
-      border: none;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      letter-spacing: 0.05em;
-      transition: all 0.3s;
-      white-space: nowrap;
-    }
-    .ask-btn:hover { background: var(--sky); }
-    .ask-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-    .ask-conversation {
-      max-width: 780px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .ask-bubble {
-      padding: 20px 24px;
-      font-size: 0.93rem;
-      line-height: 1.75;
-      animation: fadeUp 0.4s forwards;
-    }
-    .ask-bubble.user {
-      background: rgba(255,255,255,0.05);
-      border-left: 3px solid var(--sky);
-      color: rgba(255,255,255,0.75);
-      align-self: flex-end;
-      max-width: 85%;
-    }
-    .ask-bubble.assistant {
-      background: rgba(201,168,76,0.07);
-      border-left: 3px solid var(--gold);
-      color: rgba(255,255,255,0.85);
-    }
-    .ask-bubble-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 8px;
-      opacity: 0.5;
-    }
-    .ask-bubble.user .ask-bubble-label { color: var(--sky); }
-    .ask-bubble.assistant .ask-bubble-label { color: var(--gold); }
-    .ask-typing {
-      display: flex; align-items: center; gap: 6px;
-      padding: 16px 24px;
-      background: rgba(201,168,76,0.07);
-      border-left: 3px solid var(--gold);
-      max-width: 120px;
-    }
-    .ask-typing span {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-      opacity: 0.4;
-      animation: blink 1.2s infinite;
-    }
-    .ask-typing span:nth-child(2) { animation-delay: 0.2s; }
-    .ask-typing span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes blink {
-      0%, 100% { opacity: 0.2; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1); }
-    }
-    .ask-error {
-      color: #e07070;
-      font-size: 0.85rem;
-      padding: 12px 16px;
-      background: rgba(224,112,112,0.1);
-      border-left: 3px solid #e07070;
-      max-width: 780px;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes blink { 0%, 100% { opacity: 0.2; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1); } }
 
     @media (max-width: 768px) {
       nav { padding: 16px 24px; }
@@ -648,7 +185,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero" id="about">
     <div class="hero-grid"></div>
     <div class="hero-content">
@@ -665,7 +201,7 @@
     </div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-num">12<span style="font-size:1.5rem; color: var(--sky)">years</span></div>
+        <div class="stat-num">12<span style="font-size:1.5rem; color:var(--sky)">yrs</span></div>
         <div class="stat-label">Technology Experience</div>
       </div>
       <div class="stat">
@@ -673,13 +209,12 @@
         <div class="stat-label">Advisory Projects</div>
       </div>
       <div class="stat">
-        <div class="stat-num">45<span style="font-size:1.5rem; color: var(--sky)">+</span></div>
+        <div class="stat-num">45<span style="font-size:1.5rem; color:var(--sky)">+</span></div>
         <div class="stat-label">Launches / Year</div>
       </div>
     </div>
   </section>
 
-  <!-- STRENGTHS -->
   <section class="strengths" id="strengths">
     <div class="section-label">Core Strengths</div>
     <h2 class="section-title">What Managers &<br /><span>Peers Say About Spencer</span></h2>
@@ -691,12 +226,12 @@
       </div>
       <div class="strength-card">
         <div class="strength-num">02</div>
-        <div class="strength-title">Trusted Advisor & Calm Authority</div>
+        <div class="strength-title">Trusted Advisor &amp; Calm Authority</div>
         <div class="strength-text">Builds credibility immediately and sustains it through consistent value delivery. Navigates complexity without drama, providing a steady voice of reason across clients, peers, and senior leadership alike.</div>
       </div>
       <div class="strength-card">
         <div class="strength-num">03</div>
-        <div class="strength-title">Bias for Action & Ownership</div>
+        <div class="strength-title">Bias for Action &amp; Ownership</div>
         <div class="strength-text">Identifies opportunities, builds partnerships, and brings ideas to life before anyone formally asks. Self-directed work drives $2.1M+ in pipeline attribution. "He finds opportunities and moves the needle quietly — but decisively."</div>
       </div>
       <div class="strength-card">
@@ -717,251 +252,108 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section class="experience" id="experience">
     <div class="section-label">Work History</div>
     <h2 class="section-title">Career<br /><span>Timeline</span></h2>
     <div class="timeline">
-
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-period">2025 – Present</div>
         <div class="timeline-role">Senior Solutions Engineering</div>
         <div class="timeline-company">Medallia · Denver, CO</div>
-        <div class="timeline-body">
-          Scaled the Digital Center of Excellence into Solutions Engineering organizatioan. Led renewals and expansion plays for CIBC, Vanguard, Cox Communications, Albertsons, and AT&T. Developed a value-driven DXA methodology now used across accounts. Primary voice on Medallia's digital and omnichannel go-to-market strategy, influencing 2026 product roadmap.
-        </div>
+        <div class="timeline-body">Scaled the Digital Center of Excellence into Solutions Engineering organization. Led renewals and expansion plays for CIBC, Vanguard, Cox Communications, Albertsons, and AT&amp;T. Developed a value-driven DXA methodology now used across accounts. Primary voice on Medallia's digital and omnichannel go-to-market strategy, influencing 2026 product roadmap.</div>
         <div class="timeline-tags">
-          <span class="tag">Go-to-Market</span>
-          <span class="tag">Pre-Sales</span>
-          <span class="tag">CoE Leadership</span>
-          <span class="tag">Omnichannel</span>
+          <span class="tag">Go-to-Market</span><span class="tag">Pre-Sales</span><span class="tag">CoE Leadership</span><span class="tag">Omnichannel</span>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-period">2023 – 2025</div>
         <div class="timeline-role">Experience Advisor — Digital Practice</div>
         <div class="timeline-company">Medallia · Denver, CO</div>
-        <div class="timeline-body">
-          Led 26 digital advisory projects and provided ongoing guidance to 9 customers. Played a central role in 6 executive business reviews. Retained and grew major accounts including Capital One, Target, and Tapestry. Two keynote breakout sessions at Medallia Experience, recognized by Opus Research thought leadership follow-up.
-        </div>
+        <div class="timeline-body">Led 26 digital advisory projects and provided ongoing guidance to 9 customers. Played a central role in 6 executive business reviews. Retained and grew major accounts including Capital One, Target, and Tapestry. Two keynote breakout sessions at Medallia Experience, recognized by Opus Research thought leadership follow-up.</div>
         <div class="timeline-tags">
-          <span class="tag">Strategic Advisory</span>
-          <span class="tag">C-Level Engagement</span>
-          <span class="tag">Public Speaking</span>
+          <span class="tag">Strategic Advisory</span><span class="tag">C-Level Engagement</span><span class="tag">Public Speaking</span>
         </div>
       </div>
-
-
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-period">2019 – 2022</div>
-        <div class="timeline-role">Senior Analyst → Implementations Manager</div>
+        <div class="timeline-role">Senior Analyst &#8594; Implementations Manager</div>
         <div class="timeline-company">Medallia · Denver, CO</div>
-        <div class="timeline-body">
-          Built and scaled the enterprise digital implementation discipline. Most billable hours on Digital Suite team. Self-handled VP and CTO-level product escalations. Created the onboarding package now standard across BPP installs. Became the go-to expert in Digital, DXA, and emerging product integrations.
-        </div>
+        <div class="timeline-body">Built and scaled the enterprise digital implementation discipline. Most billable hours on Digital Suite team. Self-handled VP and CTO-level product escalations. Created the onboarding package now standard across BPP installs. Became the go-to expert in Digital, DXA, and emerging product integrations.</div>
         <div class="timeline-tags">
-          <span class="tag">Enterprise Accounts</span>
-         <span class="tag">People Management</span>
-          <span class="tag">Team Building</span>
-          <span class="tag">Escalation Handling</span>
+          <span class="tag">Enterprise Accounts</span><span class="tag">People Management</span><span class="tag">Team Building</span><span class="tag">Escalation Handling</span>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-period">2014 – 2019</div>
         <div class="timeline-role">Senior Client Success Manager</div>
         <div class="timeline-company">Searchmetrics · Denver, CO</div>
-        <div class="timeline-body">
-          Managed enterprise, name-brand accounts totaling $1.5M+ in annual revenue. Delivered in-person and online client training in the US and Europe. Developed onboarding workflow adopted by the global client success team. Served as mentor for new hire onboarding to ensure consistent best practices.
-        </div>
+        <div class="timeline-body">Managed enterprise, name-brand accounts totaling $1.5M+ in annual revenue. Delivered in-person and online client training in the US and Europe. Developed onboarding workflow adopted by the global client success team. Served as mentor for new hire onboarding to ensure consistent best practices.</div>
         <div class="timeline-tags">
-          <span class="tag">SEO/Content SaaS</span>
-          <span class="tag">Enterprise CSM</span>
-          <span class="tag">Training & Enablement</span>
+          <span class="tag">SEO/Content SaaS</span><span class="tag">Enterprise CSM</span><span class="tag">Training &amp; Enablement</span>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- MANAGER REVIEWS QUOTES -->
   <section class="reviews" id="reviews">
     <div class="section-label">5-Year Review Record</div>
-    <h2 class="section-title">Direct Feedback from<br /><span>Managers & Peers</span></h2>
+    <h2 class="section-title">Direct Feedback from<br /><span>Managers &amp; Peers</span></h2>
     <div class="quotes-track">
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">This was a standout year for Spencer — not just in the volume of work he delivered, but in the way he solidified his role as a strategic, trusted advisor across some of our most complex digital accounts. He's someone who genuinely elevates the work, and whose voice carries weight because of the substance and clarity behind it.</p>
-        <div class="quote-source">Manager · FY25 Annual Review</div>
-      </div>
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">Spencer's deep expertise, combined with calm, confident delivery, established credibility in the first meeting and has only strengthened over time. He's often the voice of reason, helping others step back, reframe the challenge, and move forward more strategically.</p>
-        <div class="quote-source">Peer Feedback · FY25 Annual Review</div>
-      </div>
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">He elevates everyone around him. He's kind, patient, and brilliant. I continue to learn from him — and I know others do too. He's one of our best-kept secrets — though thankfully, not for much longer.</p>
-        <div class="quote-source">Peer Feedback · FY25 Annual Review</div>
-      </div>
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">From integrated dashboards that change how clients view the impact of digital, to strategic guidance that reshapes entire programs, Spencer continues to be a force multiplier for Medallia. He's had a huge year — and even more importantly, he's positioned himself to have an even greater one ahead.</p>
-        <div class="quote-source">Manager · FY25 Annual Review</div>
-      </div>
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">Spencer has become a go-to expert across the business — someone people rely on for guidance, strategy, and execution. When Spencer's out or at capacity, it's immediately felt. He has the strategic and relational capital to shape the next phase of digital at Medallia.</p>
-        <div class="quote-source">Manager · FY25 Skills Assessment</div>
-      </div>
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">Spencer's team always exceeded their billable targets, with ZERO escalations in deployments, increased quality, and programs launching on-time and within budget. Since putting Spencer as the lead of Digital implementations, the team has been transformed.</p>
-        <div class="quote-source">Manager · FY24 Annual Review</div>
-      </div>
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">Spencer takes action — period. He takes action on new ideas, on red accounts, and on low-performing team members. He always comes with a thoughtful plan, so that he's being strategic in how he solves it, and ensures people around him follow his approach for wider success.</p>
-        <div class="quote-source">Manager · FY24 Annual Review</div>
-      </div>
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">Spencer has the skillset and mindset to help alleviate challenges that nobody else sees coming. He has continuously found innovative opportunities to grow the backlog and client value propositions, and tests connected strategies that customers are eager to adopt.</p>
-        <div class="quote-source">Manager · FY24 Q1–Q2 Review</div>
-      </div>
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">All members of Spencer's team praised him as a manager and specifically appreciated his coaching style. They've mentioned how knowledgeable he is, but that he doesn't spoon-feed answers — he allows them the opportunity to learn and practice on their own.</p>
-        <div class="quote-source">Manager · FY23 Q3 Additional Feedback</div>
-      </div>
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote-text">Spencer comes across as a trusted technical leader to internal peers and external customers. He is able to sway the opinions of accounts when they are not following best practices, and his credibility in this area is the reason he built such a successful implementation team.</p>
-        <div class="quote-source">Manager · FY24 Annual Review</div>
-      </div>
-
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">This was a standout year for Spencer — not just in the volume of work he delivered, but in the way he solidified his role as a strategic, trusted advisor across some of our most complex digital accounts. He's someone who genuinely elevates the work, and whose voice carries weight because of the substance and clarity behind it.</p><div class="quote-source">Manager · FY25 Annual Review</div></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">Spencer's deep expertise, combined with calm, confident delivery, established credibility in the first meeting and has only strengthened over time. He's often the voice of reason, helping others step back, reframe the challenge, and move forward more strategically.</p><div class="quote-source">Peer Feedback · FY25 Annual Review</div></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">He elevates everyone around him. He's kind, patient, and brilliant. I continue to learn from him — and I know others do too. He's one of our best-kept secrets — though thankfully, not for much longer.</p><div class="quote-source">Peer Feedback · FY25 Annual Review</div></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">From integrated dashboards that change how clients view the impact of digital, to strategic guidance that reshapes entire programs, Spencer continues to be a force multiplier for Medallia. He's had a huge year — and even more importantly, he's positioned himself to have an even greater one ahead.</p><div class="quote-source">Manager · FY25 Annual Review</div></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">Spencer has become a go-to expert across the business — someone people rely on for guidance, strategy, and execution. When Spencer's out or at capacity, it's immediately felt. He has the strategic and relational capital to shape the next phase of digital at Medallia.</p><div class="quote-source">Manager · FY25 Skills Assessment</div></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">Spencer's team always exceeded their billable targets, with ZERO escalations in deployments, increased quality, and programs launching on-time and within budget. Since putting Spencer as the lead of Digital implementations, the team has been transformed.</p><div class="quote-source">Manager · FY24 Annual Review</div></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">Spencer takes action — period. He takes action on new ideas, on red accounts, and on low-performing team members. He always comes with a thoughtful plan, so that he's being strategic in how he solves it, and ensures people around him follow his approach for wider success.</p><div class="quote-source">Manager · FY24 Annual Review</div></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">All members of Spencer's team praised him as a manager and specifically appreciated his coaching style. They've mentioned how knowledgeable he is, but that he doesn't spoon-feed answers — he allows them the opportunity to learn and practice on their own.</p><div class="quote-source">Manager · FY23 Q3 Additional Feedback</div></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">Spencer comes across as a trusted technical leader to internal peers and external customers. He is able to sway the opinions of accounts when they are not following best practices, and his credibility in this area is the reason he built such a successful implementation team.</p><div class="quote-source">Manager · FY24 Annual Review</div></div>
     </div>
-    <p class="scroll-hint">← Scroll to explore more →</p>
+    <p class="scroll-hint">&#8592; Scroll to explore more &#8594;</p>
   </section>
 
-  <!-- IMPACT METRICS -->
   <section class="impact" id="impact">
     <div class="section-label">Quantified Impact</div>
     <h2 class="section-title">Results That<br /><span>Speak for Themselves</span></h2>
     <div class="metrics-grid">
-      <div class="metric">
-        <div class="metric-num">26</div>
-        <div class="metric-label">Digital Advisory Projects (FY25)</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">9</div>
-        <div class="metric-label">Ongoing Client Engagements</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">$2.1<span class="metric-unit">M</span></div>
-        <div class="metric-label">Pipeline Attributed (Last 3 months)</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">65</div>
-        <div class="metric-label">Portfolio NPS (vs. 35 avg)</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">45<span class="metric-unit">+</span></div>
-        <div class="metric-label">Successful Launches / Year</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">0</div>
-        <div class="metric-label">Escalations Under Leadership</div>
-      </div>
+      <div class="metric"><div class="metric-num">26</div><div class="metric-label">Digital Advisory Projects (FY25)</div></div>
+      <div class="metric"><div class="metric-num">9</div><div class="metric-label">Ongoing Client Engagements</div></div>
+      <div class="metric"><div class="metric-num">$2.1<span class="metric-unit">M</span></div><div class="metric-label">Pipeline Attributed (Last 3 months)</div></div>
+      <div class="metric"><div class="metric-num">65</div><div class="metric-label">Portfolio NPS (vs. 35 avg)</div></div>
+      <div class="metric"><div class="metric-num">45<span class="metric-unit">+</span></div><div class="metric-label">Successful Launches / Year</div></div>
+      <div class="metric"><div class="metric-num">0</div><div class="metric-label">Escalations Under Leadership</div></div>
     </div>
-
-    <div class="section-label" style="margin-top: 20px;">Notable Accounts</div>
-    <div class="accounts-list" style="margin-top: 16px;">
-      <div class="account-chip">Capital One</div>
-      <div class="account-chip">Target</div>
-      <div class="account-chip">Vanguard</div>
-      <div class="account-chip">Meta</div>
-      <div class="account-chip">CIBC</div>
-      <div class="account-chip">Cox Communications</div>
-      <div class="account-chip">AT&T</div>
-      <div class="account-chip">Albertsons</div>
-      <div class="account-chip">Pfizer</div>
-      <div class="account-chip">Tapestry</div>
-      <div class="account-chip">Manulife</div>
-      <div class="account-chip">Anthem</div>
-      <div class="account-chip">Williams-Sonoma</div>
-      <div class="account-chip">Air New Zealand</div>
-      <div class="account-chip">Ford</div>
-      <div class="account-chip">Walgreens</div>
+    <div class="section-label" style="margin-top:20px;">Notable Accounts</div>
+    <div class="accounts-list" style="margin-top:16px;">
+      <div class="account-chip">Capital One</div><div class="account-chip">Target</div><div class="account-chip">Vanguard</div><div class="account-chip">Meta</div><div class="account-chip">CIBC</div><div class="account-chip">Cox Communications</div><div class="account-chip">AT&amp;T</div><div class="account-chip">Albertsons</div><div class="account-chip">Pfizer</div><div class="account-chip">Tapestry</div><div class="account-chip">Manulife</div><div class="account-chip">Anthem</div><div class="account-chip">Williams-Sonoma</div><div class="account-chip">Air New Zealand</div><div class="account-chip">Ford</div><div class="account-chip">Walgreens</div>
     </div>
   </section>
 
-  <!-- CAREER TRAJECTORY -->
   <section class="trajectory">
     <div class="section-label">Career Milestones</div>
-    <h2 class="section-title">Growth &<br /><span>Recognition</span></h2>
+    <h2 class="section-title">Growth &amp;<br /><span>Recognition</span></h2>
     <div class="trajectory-items">
-      <div class="traj-item">
-        <div class="traj-year">2026</div>
-        <div class="traj-title">Medallia Product Roadmap Influence</div>
-        <div class="traj-desc">In-app push notifications powered by Medallia customer intelligence added to 2026 roadmap based on Spencer's Albertsons work.</div>
-      </div>
-      <div class="traj-item">
-        <div class="traj-year">2025</div>
-        <div class="traj-title">Experience Conference Speaker</div>
-        <div class="traj-desc">Two breakout sessions at Medallia Experience. Talking points highlighted in Opus Research follow-up blog. Presented without notes after technical issues.</div>
-      </div>
-      <div class="traj-item">
-        <div class="traj-year">2024</div>
-        <div class="traj-title">Integrated Solutions Pilot Lead</div>
-        <div class="traj-desc">Built Medallia's Integrated Solutions team from scratch. Earned official org status, with 13 customer roadmaps delivered. Led SKO and Experience presentations.</div>
-      </div>
-      <div class="traj-item">
-        <div class="traj-year">2023</div>
-        <div class="traj-title">Promoted to Senior Manager</div>
-        <div class="traj-desc">Led team to highest eNPS in NORAM. Invited to Digital Suite Product Summit and Pathways PM training. Identified as one of product team's most trusted services partners.</div>
-      </div>
-      <div class="traj-item">
-        <div class="traj-year">2022</div>
-        <div class="traj-title">Promoted to Implementations Team Leader</div>
-        <div class="traj-desc">Managed team of five in player-coach capacity. Led multi-product implementations while maintaining high standard for execution.</div>
-      </div>
-      <div class="traj-item">
-        <div class="traj-year">2019–22</div>
-        <div class="traj-title">Top Performer, Digital Implementations</div>
-        <div class="traj-desc">Most performer on the Digital Suite team. Built onboarding package now standard in BPP installs. Handled CTO-level escalations independently.</div>
-      </div>
+      <div class="traj-item"><div class="traj-year">2026</div><div class="traj-title">Medallia Product Roadmap Influence</div><div class="traj-desc">In-app push notifications powered by Medallia customer intelligence added to 2026 roadmap based on Spencer's Albertsons work.</div></div>
+      <div class="traj-item"><div class="traj-year">2025</div><div class="traj-title">Experience Conference Speaker</div><div class="traj-desc">Two breakout sessions at Medallia Experience. Talking points highlighted in Opus Research follow-up blog. Presented without notes after technical issues.</div></div>
+      <div class="traj-item"><div class="traj-year">2024</div><div class="traj-title">Integrated Solutions Pilot Lead</div><div class="traj-desc">Built Medallia's Integrated Solutions team from scratch. Earned official org status, with 13 customer roadmaps delivered. Led SKO and Experience presentations.</div></div>
+      <div class="traj-item"><div class="traj-year">2023</div><div class="traj-title">Promoted to Senior Manager</div><div class="traj-desc">Led team to highest eNPS in NORAM. Invited to Digital Suite Product Summit and Pathways PM training. Identified as one of product team's most trusted services partners.</div></div>
+      <div class="traj-item"><div class="traj-year">2022</div><div class="traj-title">Promoted to Implementations Team Leader</div><div class="traj-desc">Managed team of five in player-coach capacity. Led multi-product implementations while maintaining high standard for execution.</div></div>
+      <div class="traj-item"><div class="traj-year">2019–22</div><div class="traj-title">Top Performer, Digital Implementations</div><div class="traj-desc">Most billable hours on the Digital Suite team. Built onboarding package now standard in BPP installs. Handled CTO-level escalations independently.</div></div>
     </div>
   </section>
 
-  <!-- ASK SPENCER AI -->
   <section class="ask" id="ask">
-    <div class="section-label">AI-Powered Q&A</div>
+    <div class="section-label">AI-Powered Q&amp;A</div>
     <h2 class="section-title">Ask About<br /><span>Spencer's Experience</span></h2>
-    <p class="ask-intro">
-      Powered by Claude. Ask anything about Spencer's background, leadership style, key accomplishments, or approach to solving complex problems — answered from his actual resume and 5 years of manager reviews.
-    </p>
-
+    <p class="ask-intro">Powered by Claude. Ask anything about Spencer's background, leadership style, key accomplishments, or approach to solving complex problems — answered from his actual resume and 5 years of manager reviews.</p>
     <div class="ask-api-note">
-      <span>🔑 API KEY:</span>
+      <span>&#128273; API KEY:</span>
       <input type="password" id="apiKeyInput" placeholder="Paste your Anthropic API key to activate..." />
     </div>
-
     <div class="ask-chips">
       <button class="ask-chip" onclick="setQuestion('What are Spencer\'s greatest professional strengths?')">Greatest strengths?</button>
       <button class="ask-chip" onclick="setQuestion('How does Spencer handle leadership under pressure?')">Leadership under pressure?</button>
@@ -970,135 +362,69 @@
       <button class="ask-chip" onclick="setQuestion('What is Spencer\'s approach to cross-functional collaboration?')">Cross-functional style?</button>
       <button class="ask-chip" onclick="setQuestion('What has Spencer built from scratch at Medallia?')">Things built from scratch?</button>
     </div>
-
     <div class="ask-input-row">
       <input class="ask-input" id="questionInput" type="text" placeholder="e.g. What makes Spencer different as a solutions engineer?" onkeydown="if(event.key==='Enter') askQuestion()" />
-      <button class="ask-btn" id="askBtn" onclick="askQuestion()">Ask →</button>
+      <button class="ask-btn" id="askBtn" onclick="askQuestion()">Ask &#8594;</button>
     </div>
-
     <div class="ask-conversation" id="conversation"></div>
     <div id="askError"></div>
   </section>
 
-  <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="section-label">Get In Touch</div>
     <h2 class="section-title">Let's Connect</h2>
     <p>Open to new opportunities in solutions engineering, advisory, and enterprise go-to-market leadership.</p>
     <div class="contact-links">
       <a href="https://www.linkedin.com/in/spencerathomas" class="contact-link primary" target="_blank">LinkedIn Profile</a>
-      <a href="/cdn-cgi/l/email-protection#d9aaa9bcb7babcabb8adb1b6b4b8aa99beb4b8b0b5f7bab6b4" class="contact-link outline">Send Email</a>
+      <a href="mailto:spencerathomas@gmail.com" class="contact-link outline">Send Email</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Spencer Thomas · Built to showcase career, leadership, and impact</p>
+    <p>&copy; 2026 Spencer Thomas &middot; Built to showcase career, leadership, and impact</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Scroll reveal for timeline items
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      });
+  <script>
+    // Scroll reveal
+    var tlObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-
-    document.querySelectorAll('.timeline-item').forEach(el => {
+    document.querySelectorAll('.timeline-item').forEach(function(el) {
       el.classList.add('animate-in');
-      observer.observe(el);
+      tlObserver.observe(el);
     });
 
-    // Smooth nav highlighting
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
-      });
-      navLinks.forEach(a => {
-        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
-      });
+    // Nav highlight
+    var navSections = document.querySelectorAll('section[id]');
+    var navAs = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', function() {
+      var current = '';
+      navSections.forEach(function(s) { if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id'); });
+      navAs.forEach(function(a) { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : ''; });
     });
-    // ── ASK SPENCER AI ──────────────────────────────────────────
-    const SPENCER_CONTEXT = `You are an assistant helping hiring managers, recruiters, and professional contacts learn about Spencer Thomas.
 
-Answer questions based ONLY on the following factual information about Spencer. Be warm, confident, and specific. Keep answers concise (2–4 paragraphs max). If asked something not covered below, say you don't have that information but invite them to reach out to Spencer directly.
+    // AI Q&A
+    var SPENCER_CONTEXT = 'You are an assistant helping hiring managers, recruiters, and professional contacts learn about Spencer Thomas. Answer questions based ONLY on the following factual information. Be warm, confident, and specific. Keep answers concise (2-4 paragraphs max). If asked something not covered, say you do not have that information but invite them to reach out to Spencer directly.\n\nRESUME: Spencer Thomas - Solutions Engineer | Experience Advisor | Senior Manager. Denver, CO. Medallia (August 2019 - present). Known for calm executive presence, cross-functional leadership, and influencing without authority.\n\nRoles at Medallia: Senior Analyst 2019-2022, Manager 2022-2023, Experience Advisor 2023-2025, Senior Solutions Engineering 2025-present.\n\nKey contributions: Founded Digital Center of Excellence; $2.1M pipeline in first 3 months. Led 26 digital advisory projects (FY25), guidance for 9 clients, part of 6 executive business reviews. Retained/grew Capital One, Target, Tapestry, Vanguard, CIBC, Cox, AT&T, Albertsons, Meta, Pfizer, Manulife, Anthem, Williams-Sonoma, Air New Zealand, Ford, Walgreens. Co-founded Integrated Solutions practice; 13 customer roadmaps. Managed team of 4-5 with zero deployment escalations, highest eNPS in NORAM. Two keynote sessions at Medallia Experience 2025; recognized in Opus Research blog. Influenced 2026 product roadmap. Portfolio NPS 65 vs. 35 average. Most billable hours on Digital Suite team 2019-2022.\n\nPrevious: Senior CSM at Searchmetrics (2014-2019). Managed $1.5M+ enterprise revenue. Training in US and Europe. Developed global onboarding workflow.\n\nSTRENGTHS FROM REVIEWS: (1) Strategic clarity with real-world application. (2) Trusted advisor and calm authority. (3) Bias for action and ownership. (4) Cross-functional leadership - elevates everyone around him. (5) Connected storytelling - omnichannel vision. (6) Adaptability under change.\n\nMANAGER QUOTES: "Standout year - solidified role as strategic trusted advisor." "Force multiplier for Medallia." "Elevates everyone around him. Kind, patient, brilliant." "Spencer takes action, period." "ZERO escalations in deployments." "Voice carries weight because of substance and clarity." "Does not spoon-feed answers - allows people to learn on their own."\n\nCAREER ASPIRATION: Leadership role in go-to-market org, more strategic decisions, expanding omnichannel expertise.';
 
-=== RESUME ===
-Spencer Thomas — Solutions Engineer | Experience Advisor | Senior Manager
-Denver, CO | Medallia (August 2019 – present)
+    var conversationHistory = [];
 
-Career direction: Accelerating his solutions engineering career with a unique blend of strategic clarity, technical fluency, and customer-centric thinking. Known for calm executive presence, strong cross-functional leadership, and the ability to influence without authority.
-
-Roles at Medallia:
-- Senior Analyst 2019–2022
-- Manager 2022–2023
-- Senior Manager 2024–present
-
-Key contributions at Medallia:
-- Founded and leads the Digital Center of Excellence; $2.1M pipeline attributed in first 3 months
-- Led 26 digital advisory projects (FY25), ongoing guidance for 9 clients, part of 6 executive business reviews
-- Retained and grew major accounts: Capital One, Target, Tapestry, Vanguard, CIBC, Cox Communications, AT&T, Albertsons, Meta, Pfizer, Manulife, Nordstrom, Williams-Sonoma, Air New Zealand, Ford Pro, Walgreens
-- Co-founded and piloted Integrated Solutions practice from scratch; built to official org status with 13 customer roadmaps
-- Managed team of 4, zero deployment escalations, record billability, highest eNPS in NORAM under his leadership
-- Two keynote breakout sessions at Medallia Experience 2025; recognized in Opus Research thought leadership
-- Influenced 2026 Medallia product roadmap (in-app push notifications via customer intelligence)
-- Portfolio NPS of 65 vs. Medallia average of 35
-- Most billable hours on Digital Suite team (2019–2022)
-- Self-handled CTO-level product escalations
-- Created onboarding package now standard in BPP installs
-
-Previous: Senior Client Success Manager at Searchmetrics (2014–2019)
-- Managed $1.5M+ in annual enterprise revenue
-- Delivered training in US and Europe
-- Developed global onboarding workflow
-
-=== 5 YEARS OF MANAGER & PEER REVIEW HIGHLIGHTS ===
-
-STRENGTHS consistently cited across reviews:
-1. Strategic clarity with real-world application — connects big-picture to practical execution; "He can speak executive and then translate that into real solutions"
-2. Trusted advisor and calm authority — builds credibility immediately, navigates complexity without drama, voice of reason
-3. Bias for action and ownership — self-directed, finds opportunities before asked, moves the needle quietly but decisively
-4. Cross-functional leadership — elevates everyone around him, generous with time, builds bridges across PS, CSM, Sales, Product, CXA
-5. Connected storytelling — sees the full omnichannel vision, turns technical conversations into strategic narratives
-6. Adaptability under change — handled org restructuring, lost entire management chain, kept moving forward positively
-
-Manager quotes (verbatim from reviews):
-- "This was a standout year for Spencer — he solidified his role as a strategic, trusted advisor across some of our most complex digital accounts."
-- "He's a force multiplier for Medallia."
-- "He elevates everyone around him. He's kind, patient, and brilliant."
-- "Spencer takes action, period. He always comes with a thoughtful plan."
-- "ZERO escalations in deployments, increased quality, programs launching on-time and within budget."
-- "He's one of our best-kept secrets — though thankfully, not for much longer."
-- "Spencer's deep expertise, combined with calm, confident delivery, established credibility in the first meeting."
-- "His voice carries weight because of the substance and clarity behind it."
-- "All members of Spencer's team praised him as a manager — he doesn't spoon-feed answers, he allows them to learn."
-
-Growth areas Spencer has actively worked on (shows self-awareness):
-- Public speaking: Went from nervous presenter to delivering 2 keynote sessions at Experience without notes
-- Holding people accountable internally, not just with clients
-- Scaling his expertise through others rather than being a one-person solution
-- Expanding cross-functional, omnichannel alignment beyond the digital practice
-
-Career aspiration: Leadership role within the go-to-market org, involved in more strategic decisions, expanding omnichannel and contact center expertise beyond digital.`;
-
-    let conversationHistory = [];
-
-    window.setQuestion = function(q) {
+    function setQuestion(q) {
       document.getElementById('questionInput').value = q;
       document.getElementById('questionInput').focus();
     }
 
-    window.askQuestion = async function() {
-      const apiKey = document.getElementById('apiKeyInput').value.trim();
-      const question = document.getElementById('questionInput').value.trim();
-      const errorDiv = document.getElementById('askError');
-      const btn = document.getElementById('askBtn');
-      const conv = document.getElementById('conversation');
+    function escapeHtml(str) {
+      return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    async function askQuestion() {
+      var apiKey = document.getElementById('apiKeyInput').value.trim();
+      var question = document.getElementById('questionInput').value.trim();
+      var errorDiv = document.getElementById('askError');
+      var btn = document.getElementById('askBtn');
+      var conv = document.getElementById('conversation');
 
       errorDiv.innerHTML = '';
-
       if (!apiKey) {
         errorDiv.innerHTML = '<div class="ask-error">Please enter your Anthropic API key above to use this feature.</div>';
         document.getElementById('apiKeyInput').focus();
@@ -1106,20 +432,9 @@ Career aspiration: Leadership role within the go-to-market org, involved in more
       }
       if (!question) return;
 
-      // Add user bubble
-      conv.insertAdjacentHTML('beforeend', `
-        <div class="ask-bubble user">
-          <div class="ask-bubble-label">You</div>
-          ${escapeHtml(question)}
-        </div>`);
-
-      // Typing indicator
-      const typingId = 'typing-' + Date.now();
-      conv.insertAdjacentHTML('beforeend', `
-        <div class="ask-typing" id="${typingId}">
-          <span></span><span></span><span></span>
-        </div>`);
-
+      conv.insertAdjacentHTML('beforeend', '<div class="ask-bubble user"><div class="ask-bubble-label">You</div>' + escapeHtml(question) + '</div>');
+      var typingId = 'typing-' + Date.now();
+      conv.insertAdjacentHTML('beforeend', '<div class="ask-typing" id="' + typingId + '"><span></span><span></span><span></span></div>');
       conv.scrollTop = conv.scrollHeight;
       document.getElementById('questionInput').value = '';
       btn.disabled = true;
@@ -1127,7 +442,7 @@ Career aspiration: Leadership role within the go-to-market org, involved in more
       conversationHistory.push({ role: 'user', content: question });
 
       try {
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
+        var response = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -1143,23 +458,26 @@ Career aspiration: Leadership role within the go-to-market org, involved in more
           })
         });
 
-        const data = await response.json();
+        var data = await response.json();
+        if (!response.ok) throw new Error(data.error && data.error.message ? data.error.message : 'API error ' + response.status);
 
-        if (!response.ok) {
-          throw new Error(data.error?.message || `API error ${response.status}`);
-        }
-
-        const reply = data.content?.[0]?.text || 'No response received.';
+        var reply = (data.content && data.content[0] && data.content[0].text) ? data.content[0].text : 'No response received.';
         conversationHistory.push({ role: 'assistant', content: reply });
 
-        document.getElementById(typingId)?.remove();
-        conv.insertAdjacentHTML('beforeend', `
-          <div class="ask-bubble assistant">
-            <div class="ask-bubble-label">Spencer's AI</div>
-            ${escapeHtml(reply).replace(/\n/g, '<br>')}
-          </div>`);
+        var typingEl = document.getElementById(typingId);
+        if (typingEl) typingEl.remove();
+        conv.insertAdjacentHTML('beforeend', '<div class="ask-bubble assistant"><div class="ask-bubble-label">Spencer\'s AI</div>' + escapeHtml(reply).replace(/\n/g, '<br>') + '</div>');
 
       } catch (err) {
-        document.getElementById(typingId)?.remove();
+        var typingEl2 = document.getElementById(typingId);
+        if (typingEl2) typingEl2.remove();
         conversationHistory.pop();
-        errorDiv.innerHTML = `<div class="ask-error">Error: ${escapeH
+        errorDiv.innerHTML = '<div class="ask-error">Error: ' + escapeHtml(err.message) + '. Check your API key and try again.</div>';
+      }
+
+      btn.disabled = false;
+      conv.scrollTop = conv.scrollHeight;
+    }
+  </script>
+</body>
+</html>
