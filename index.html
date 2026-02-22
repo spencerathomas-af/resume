@@ -654,7 +654,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow">Solutions Engineering · Advisory · Leadership</div>
       <h1 class="hero-name">Spencer<br /><span>Thomas</span></h1>
-      <p class="hero-title">Senior Manager — Solutions Engineering & Experience Advisory</p>
+      <p class="hero-title">Senior Manager — Solutions Engineering</p>
       <p class="hero-summary">
         With a background spanning technology, strategy, and advisory, Spencer combines executive presence with technical depth to drive measurable outcomes at enterprise scale. Known for calm authority, cross-functional influence, and translating complex digital visions into real business results.
       </p>
@@ -665,8 +665,8 @@
     </div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-num">6<span style="font-size:1.5rem; color: var(--sky)">+</span></div>
-        <div class="stat-label">Years at Medallia</div>
+        <div class="stat-num">12<span style="font-size:1.5rem; color: var(--sky)">years</span></div>
+        <div class="stat-label">Technology Experience</div>
       </div>
       <div class="stat">
         <div class="stat-num">26</div>
@@ -903,10 +903,10 @@
       <div class="account-chip">Pfizer</div>
       <div class="account-chip">Tapestry</div>
       <div class="account-chip">Manulife</div>
-      <div class="account-chip">Nordstrom</div>
+      <div class="account-chip">Anthem</div>
       <div class="account-chip">Williams-Sonoma</div>
       <div class="account-chip">Air New Zealand</div>
-      <div class="account-chip">Ford Pro</div>
+      <div class="account-chip">Ford</div>
       <div class="account-chip">Walgreens</div>
     </div>
   </section>
@@ -928,23 +928,23 @@
       </div>
       <div class="traj-item">
         <div class="traj-year">2024</div>
-        <div class="traj-title">Digital Center of Excellence Founder</div>
-        <div class="traj-desc">Identified top accounts and inserted into strategic deals — $2.1M in pipeline attribution within 3 months of joining the CoE team.</div>
-      </div>
-      <div class="traj-item">
-        <div class="traj-year">2023</div>
         <div class="traj-title">Integrated Solutions Pilot Lead</div>
         <div class="traj-desc">Built Medallia's Integrated Solutions team from scratch. Earned official org status, with 13 customer roadmaps delivered. Led SKO and Experience presentations.</div>
       </div>
       <div class="traj-item">
-        <div class="traj-year">2022</div>
+        <div class="traj-year">2023</div>
         <div class="traj-title">Promoted to Senior Manager</div>
         <div class="traj-desc">Led team to highest eNPS in NORAM. Invited to Digital Suite Product Summit and Pathways PM training. Identified as one of product team's most trusted services partners.</div>
       </div>
       <div class="traj-item">
-        <div class="traj-year">2019–21</div>
+        <div class="traj-year">2022</div>
+        <div class="traj-title">Promoted to Implementations Team Leader</div>
+        <div class="traj-desc">Managed team of five in player-coach capacity. Led multi-product implementations while maintaining high standard for execution.</div>
+      </div>
+      <div class="traj-item">
+        <div class="traj-year">2019–22</div>
         <div class="traj-title">Top Performer, Digital Implementations</div>
-        <div class="traj-desc">Most billable hours on the Digital Suite team. Built onboarding package now standard in BPP installs. Handled CTO-level escalations independently.</div>
+        <div class="traj-desc">Most performer on the Digital Suite team. Built onboarding package now standard in BPP installs. Handled CTO-level escalations independently.</div>
       </div>
     </div>
   </section>
@@ -987,15 +987,15 @@
     <p>Open to new opportunities in solutions engineering, advisory, and enterprise go-to-market leadership.</p>
     <div class="contact-links">
       <a href="https://www.linkedin.com/in/spencerathomas" class="contact-link primary" target="_blank">LinkedIn Profile</a>
-      <a href="mailto:spencerathomas@gmail.com" class="contact-link outline">Send Email</a>
+      <a href="/cdn-cgi/l/email-protection#d9aaa9bcb7babcabb8adb1b6b4b8aa99beb4b8b0b5f7bab6b4" class="contact-link outline">Send Email</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Spencer Thomas · Built to showcase career, leadership, and impact</p>
+    <p>© 2026 Spencer Thomas · Built to showcase career, leadership, and impact</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll reveal for timeline items
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -1085,12 +1085,12 @@ Career aspiration: Leadership role within the go-to-market org, involved in more
 
     let conversationHistory = [];
 
-    function setQuestion(q) {
+    window.setQuestion = function(q) {
       document.getElementById('questionInput').value = q;
       document.getElementById('questionInput').focus();
     }
 
-    async function askQuestion() {
+    window.askQuestion = async function() {
       const apiKey = document.getElementById('apiKeyInput').value.trim();
       const question = document.getElementById('questionInput').value.trim();
       const errorDiv = document.getElementById('askError');
@@ -1162,11 +1162,4 @@ Career aspiration: Leadership role within the go-to-market org, involved in more
       } catch (err) {
         document.getElementById(typingId)?.remove();
         conversationHistory.pop();
-        errorDiv.innerHTML = `<div class="ask-error">Error: ${escapeHtml(err.message)}. Check your API key and try again.</div>`;
-      }
-
-      btn.disabled = false;
-      conv.scrollTop = conv.scrollHeight;
-    }
-
-    func
+        errorDiv.innerHTML = `<div class="ask-error">Error: ${escapeH
