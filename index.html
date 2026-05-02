@@ -71,12 +71,12 @@
     .reviews { background:var(--slate); color:var(--white); overflow:hidden; }
     .reviews .section-title { color:var(--white); }
     .reviews .section-title span { color:var(--sky); }
-    .quotes-track { display:flex; gap:32px; overflow-x:auto; padding-bottom:20px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+    .quotes-track { display:flex; gap:32px; overflow-x:auto; overflow-y:visible; padding-bottom:24px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; flex-wrap:nowrap; align-items:flex-start; width:100%; }
     .quotes-track::-webkit-scrollbar { display:none; }
-    .quote-card { flex:0 0 420px; scroll-snap-align:start; background:rgba(255,255,255,0.06); padding:40px; border:1px solid rgba(255,255,255,0.1); transition:all 0.3s; }
+    .quote-card { flex:0 0 400px; min-width:400px; height:320px; overflow-y:auto; scroll-snap-align:start; background:rgba(255,255,255,0.06); padding:36px; border:1px solid rgba(255,255,255,0.1); transition:all 0.3s; box-sizing:border-box; display:flex; flex-direction:column; justify-content:space-between; }
     .quote-card:hover { background:rgba(255,255,255,0.1); }
-    .quote-mark { font-family:'Playfair Display',serif; font-size:5rem; color:var(--sky); opacity:0.3; line-height:0.5; margin-bottom:20px; display:block; }
-    .quote-text { font-size:0.95rem; line-height:1.8; color:rgba(255,255,255,0.8); font-style:italic; margin-bottom:24px; }
+    .quote-mark { font-family:'Playfair Display',serif; font-size:3.5rem; color:var(--sky); opacity:0.3; line-height:0.6; margin-bottom:12px; display:block; }
+    .quote-text { font-size:0.9rem; line-height:1.7; color:rgba(255,255,255,0.8); font-style:italic; margin-bottom:16px; flex:1; overflow:hidden; }
     .quote-source { font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sky); font-weight:500; }
     .scroll-hint { text-align:center; margin-top:32px; font-size:0.8rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.3); }
 
@@ -205,7 +205,7 @@
         <div class="timeline-period">2024 &ndash; Present</div>
         <div class="timeline-role">Senior Solutions Engineer</div>
         <div class="timeline-company">Medallia &middot; Denver, CO</div>
-        <div class="timeline-body">Scaled the Digital Center of Excellence into Solutions Engineering organization. Led renewals and expansion plays for CIBC, Vanguard, Cox Communications, Albertsons, and AT&amp;T. Developed a value-driven DXA methodology now used across accounts. Primary voice on Medallia&rsquo;s digital and omnichannel go-to-market strategy, influencing 2026 product roadmap. Used AI to develop the sales go-to-market strategy for Medallia&rsquo;s partnership with Ada CX, connecting enterprise CX with agentic AI chat experiences.</div>
+        <div class="timeline-body">Stepped into Solutions Engineering with immediate impact — developing a value-driven DXA demo methodology now adopted across the team and delivering product demonstrations that connect platform capability directly to customer business outcomes. Recognized as the go-to expert across Digital Suite, DXA, Medallia Conversations, and omnichannel integrations, consistently translating deep product mastery into compelling, value-focused narratives for enterprise prospects and customers. Led session at Medallia Experience that directly influenced the 2026 product roadmap, and coached conference speakers who credited his guidance as the reason they felt prepared to present. Used AI to develop the go-to-market strategy for Medallia&rsquo;s partnership with Ada CX, building replicable dashboards and real-time actioning frameworks recognized across the business. Collaborated with AEs via Google NotebookLM and AI-built demo assets to accelerate deal velocity across Williams-Sonoma, Novo Nordisk, The Knot, and others.</div>
         <div class="timeline-tags"><span class="tag">Go-to-Market</span><span class="tag">Pre-Sales</span><span class="tag">CoE Leadership</span><span class="tag">Omnichannel</span><span class="tag">AI Strategy</span></div>
       </div>
       <div class="timeline-item">
@@ -213,7 +213,7 @@
         <div class="timeline-period">2023 &ndash; 2024</div>
         <div class="timeline-role">Experience Advisor &mdash; Digital Practice</div>
         <div class="timeline-company">Medallia &middot; Denver, CO</div>
-        <div class="timeline-body">Led 26 digital advisory projects and provided ongoing guidance to 9 customers. Played a central role in 6 executive business reviews. Retained and grew major accounts including Capital One, Target, and Tapestry. Two keynote breakout sessions at Medallia Experience, recognized by Opus Research thought leadership follow-up. Leveraged AI to build integrated solutions demonstrating how contact center and chat signals correlate to observed digital behaviors &mdash; connecting omnichannel intelligence at enterprise scale. Used AI daily to ideate and accelerate solution design recommendations for customers and prospects.</div>
+        <div class="timeline-body">Led 26 digital advisory engagements grounded in deep product expertise across Medallia Digital Suite, DXA, and Conversations &mdash; consistently translating platform capabilities into value-focused recommendations that moved programs forward. Played a central role in 6 executive business reviews, demonstrating how digital signals connect to brand and contact center outcomes. Retained and grew major accounts including Capital One, Target, and Tapestry. Delivered two keynote breakout sessions at Medallia Experience, recognized by Opus Research thought leadership follow-up. Leveraged AI to build integrated solutions demonstrating how contact center and chat signals correlate to observed digital behaviors &mdash; connecting omnichannel intelligence at enterprise scale. Used AI daily to ideate and accelerate solution design recommendations for customers and prospects.</div>
         <div class="timeline-tags"><span class="tag">Strategic Advisory</span><span class="tag">C-Level Engagement</span><span class="tag">Public Speaking</span><span class="tag">Applied AI</span></div>
       </div>
       <div class="timeline-item">
@@ -248,7 +248,6 @@
       <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">Spencer takes action &mdash; period. He takes action on new ideas, on red accounts, and on low-performing team members. He always comes with a thoughtful plan, so that he&rsquo;s being strategic in how he solves it, and ensures people around him follow his approach for wider success.</p><div class="quote-source">Manager &middot; FY24 Annual Review</div></div>
       <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">All members of Spencer&rsquo;s team praised him as a manager and specifically appreciated his coaching style. They&rsquo;ve mentioned how knowledgeable he is, but that he doesn&rsquo;t spoon-feed answers &mdash; he allows them the opportunity to learn and practice on their own.</p><div class="quote-source">Manager &middot; FY23 Q3 Additional Feedback</div></div>
       <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">Spencer comes across as a trusted technical leader to internal peers and external customers. He is able to sway the opinions of accounts when they are not following best practices, and his credibility in this area is the reason he built such a successful implementation team.</p><div class="quote-source">Manager &middot; FY24 Annual Review</div></div>
-    </div>
       <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">He brings a deep level of digital expertise to the table, but it&rsquo;s his creative approach to problem-solving that truly sets him apart. Spencer isn&rsquo;t just a teammate &mdash; he&rsquo;s a collaborator who consistently elevates the quality of our work through innovative use cases and a forward-thinking mindset.</p><div class="quote-source">Senior Solutions Engineer &middot; FY26 Peer Review</div></div>
       <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">He&rsquo;s incredibly collaborative and consistently helps me think through accounts and digital strategies in a more thoughtful, strategic way. Because of his support, I&rsquo;ve been able to approach my pipeline with more clarity and creativity, which has made a real impact. He shows up exceptionally well in front of customers and is a huge asset to the team.</p><div class="quote-source">Strategic Account Executive &middot; FY26 Peer Review</div></div>
       <div class="quote-card"><span class="quote-mark">&ldquo;</span><p class="quote-text">He brings an incredible amount of product, technical, and business value expertise to our team. He can easily and confidently solution for impact &mdash; whether live on customer calls, internal strategy discussions, or quick Slack guidance. His agility makes him an incredibly integral part of our account teams. He shows up prepared and takes ownership of his contributions, building immediate trust with customers.</p><div class="quote-source">Strategic Account Executive &middot; FY26 Peer Review</div></div>
@@ -261,7 +260,7 @@
     <h2 class="section-title">Results That<br><span>Speak for Themselves</span></h2>
     <div class="metrics-grid">
       <div class="metric"><div class="metric-num">26</div><div class="metric-label">Digital Advisory Projects (FY25)</div></div>
-      <div class="metric"><div class="metric-num">9</div><div class="metric-label">Ongoing Client Engagements</div></div>
+      <div class="metric"><div class="metric-num">$1.1<span class="metric-unit">M</span></div><div class="metric-label">On Target to Close, Q2 2026</div></div>
       <div class="metric"><div class="metric-num">$2.1<span class="metric-unit">M</span></div><div class="metric-label">Pipeline Attributed (Last 3 months)</div></div>
       <div class="metric"><div class="metric-num">65</div><div class="metric-label">Portfolio NPS (vs. 35 avg)</div></div>
       <div class="metric"><div class="metric-num">45<span class="metric-unit">+</span></div><div class="metric-label">Successful Launches / Year</div></div>
